@@ -1,0 +1,9 @@
+- name: Configure development machine
+  hosts: all
+  sudo: True
+  tasks:
+    - name: install postgres
+      apt: name={{ item }} update_cache=yes
+      with_items:
+        - postgresql 
+        - postgresql-contrib
